@@ -1,3 +1,7 @@
+## Course Project Intro
+
+The code in plot[1-4].R will attempt to read a file called 'household_power_consumption.txt' from the current working directory.  This file is assumed to be the csv data that is needed to generate the plots.  If the file does not exist in the current working directory, all of the plot[1-4].R scripts will download the zip file containing the data (from the Coursera https link), unzip the file into the working directory, and then generate the required plots using the newly downloaded data.
+
 ## Introduction
 
 This assignment uses data from
