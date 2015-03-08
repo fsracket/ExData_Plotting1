@@ -1,7 +1,14 @@
-# temp <- tempfile()
-# download.file("https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption,temp, mode="wb")
-# unzip(temp, "power-consumption")
-# dd <- read.table("gbr_Country_en_csv_v2.csv", sep=",",skip=2, header=T)
+if (!file.exists("household_power_consumption.txt")) {
+  #download zip file from coursera (to temp location)
+  #unzip and place csv in working dir
+  temp <- tempfile()
+  download.file("https://d396qusza40orc.cloudfront.net/exdata/data/household_power_consumption.zip",
+                temp,
+                method="curl")
+  unzip(temp, files = c("household_power_consumption.txt"), exdir = getwd())
+  unlink(temp)
+}
+
 
 powerDf <- read.csv("household_power_consumption.txt", na.strings = "?",
                     sep = ";", stringsAsFactors = FALSE)
